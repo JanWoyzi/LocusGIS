@@ -1,8 +1,8 @@
 <template version="2">
   <layers>
     <layerDb>
-      <id>nivicolous_myxos</id>
-      <label>Nivicolous myxos</label>
+      <id>nivicolous_myxos 2</id>
+      <label>Nivicolous myxos 2</label>
       <alias></alias>
       <geometry>MULTIPOINT</geometry>
       <crs>4326</crs>
