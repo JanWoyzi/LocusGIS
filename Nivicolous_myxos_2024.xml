@@ -1,0 +1,205 @@
+<template version="2">
+  <layers>
+    <layerDb>
+      <id>nivicolous_myxos</id>
+      <label>Nivicolous myxos</label>
+      <alias></alias>
+      <geometry>MULTIPOINT</geometry>
+      <crs>4326</crs>
+      <encoding>UTF-8</encoding>
+      <attributes>
+        <attribute type="AUTONUMBERING">
+          <id>Accession</id>
+          <label>Accession</label>
+          <alias></alias>
+          <status>EDITABLE</status>
+          <required>true</required>
+          <initial>1</initial>
+        </attribute>
+        <attribute type="INTEGER">
+          <id>Box</id>
+          <label>Box</label>
+          <alias></alias>
+          <status>EDITABLE</status>
+          <required>true</required>
+          <default></default>
+        </attribute>
+        <attribute type="STRING">
+          <id>Species</id>
+          <label>Species</label>
+          <alias></alias>
+          <status>EDITABLE</status>
+          <required>true</required>
+          <default></default>
+        </attribute>
+        <attribute type="ENUM">
+          <id>Location</id>
+          <label>Location</label>
+          <alias></alias>
+          <status>EDITABLE</status>
+          <required>false</required>
+          <default></default>
+          <options_aliases>|</options_aliases>
+          <options>Loc01|Loc02</options>
+          <multipleChoice>false</multipleChoice>
+        </attribute>
+        <attribute type="INTEGER">
+          <id>Size</id>
+          <label>Size</label>
+          <alias></alias>
+          <status>EDITABLE</status>
+          <required>false</required>
+          <default></default>
+        </attribute>
+        <attribute type="ENUM">
+          <id>Sub_type</id>
+          <label>Sub_type</label>
+          <alias></alias>
+          <status>EDITABLE</status>
+          <required>false</required>
+          <default></default>
+          <options_aliases>||</options_aliases>
+          <options>tw|lh|ll</options>
+          <multipleChoice>false</multipleChoice>
+        </attribute>
+        <attribute type="STRING">
+          <id>Sub_art</id>
+          <label>Sub_art</label>
+          <alias></alias>
+          <status>EDITABLE</status>
+          <required>false</required>
+          <default></default>
+        </attribute>
+        <attribute type="BOOLEAN">
+          <id>Life</id>
+          <label>Life</label>
+          <alias></alias>
+          <status>EDITABLE</status>
+          <required>false</required>
+          <default>false</default>
+        </attribute>
+        <attribute type="INTEGER">
+          <id>Height_cm</id>
+          <label>Height_cm</label>
+          <alias></alias>
+          <status>EDITABLE</status>
+          <required>false</required>
+          <default></default>
+        </attribute>
+        <attribute type="INTEGER">
+          <id>Snow_dist_m</id>
+          <label>Snow_dist_m</label>
+          <alias></alias>
+          <status>EDITABLE</status>
+          <required>false</required>
+          <default></default>
+        </attribute>
+        <attribute type="DATE">
+          <id>Date</id>
+          <label>Date</label>
+          <alias></alias>
+          <status>EDITABLE</status>
+          <required>true</required>
+          <autoUpdate>false</autoUpdate>
+          <default>CURRENT_TIME</default>
+        </attribute>
+        <attribute type="COORDINATE_X">
+          <id>X_coordinate</id>
+          <label>X_coordinate</label>
+          <alias></alias>
+          <status>EDITABLE</status>
+          <required>true</required>
+          <expression>round(X(ST_Transform(CastToXY(&quot;GEOMETRY&quot;), 4326)), 8)</expression>
+        </attribute>
+        <attribute type="COORDINATE_Y">
+          <id>Y_coordinate</id>
+          <label>Y_coordinate</label>
+          <alias></alias>
+          <status>EDITABLE</status>
+          <required>true</required>
+          <expression>round(Y(ST_Transform(CastToXY(&quot;GEOMETRY&quot;), 4326)), 8)</expression>
+        </attribute>
+        <attribute type="ACCURACY_HOR_AVG">
+          <id>XY_prec</id>
+          <label>XY_prec</label>
+          <alias></alias>
+          <status>EDITABLE</status>
+          <required>false</required>
+        </attribute>
+        <attribute type="COORDINATE_Z">
+          <id>Elevation</id>
+          <label>Elevation</label>
+          <alias></alias>
+          <status>EDITABLE</status>
+          <required>false</required>
+          <expression>round(Z(&quot;GEOMETRY&quot;), 2)</expression>
+        </attribute>
+        <attribute type="ACCURACY_VER_AVG">
+          <id>Elev_prec</id>
+          <label>Elev_prec</label>
+          <alias></alias>
+          <status>EDITABLE</status>
+          <required>false</required>
+        </attribute>
+        <attribute type="STRING">
+          <id>Remark</id>
+          <label>Remark</label>
+          <alias></alias>
+          <status>EDITABLE</status>
+          <required>false</required>
+          <default></default>
+        </attribute>
+        <attribute type="STRING">
+          <id>lg_attach</id>
+          <label>lg_attach</label>
+          <alias></alias>
+          <status>EDITABLE</status>
+          <required>false</required>
+          <default></default>
+        </attribute>
+        <attribute type="STRING">
+          <id>lg_created</id>
+          <label>lg_created</label>
+          <alias></alias>
+          <status>EDITABLE</status>
+          <required>false</required>
+          <default></default>
+        </attribute>
+      </attributes>
+      <attrPrimary>Accession</attrPrimary>
+      <attrSecondary></attrSecondary>
+      <labelsOnMap>
+        <attribute>Accession</attribute>
+        <sizeText>15.0</sizeText>
+        <colorText>#FF000000</colorText>
+        <drawOutline>false</drawOutline>
+        <colorOutline>#FFFFFFFF</colorOutline>
+        <drawBackground>false</drawBackground>
+        <colorBackground>#FFFFFFFF</colorBackground>
+      </labelsOnMap>
+      <geometryStyle>
+        <Rule>
+          <PointSymbolizer uom="http://www.opengeospatial.org/se/units/pixel">
+            <Graphic>
+              <Mark>
+                <WellKnownName>x</WellKnownName>
+                <Fill>
+                  <CssParameter name="fill">#4E5355</CssParameter>
+                  <CssParameter name="fill-opacity">1.0</CssParameter>
+                </Fill>
+                <Stroke>
+                  <CssParameter name="stroke">#000000</CssParameter>
+                  <CssParameter name="stroke-opacity">1.0</CssParameter>
+                  <CssParameter name="stroke-width">1.0</CssParameter>
+                </Stroke>
+              </Mark>
+              <Size>6.0</Size>
+              <Rotation>0.0</Rotation>
+              <Opacity>1.0</Opacity>
+            </Graphic>
+          </PointSymbolizer>
+        </Rule>
+      </geometryStyle>
+    </layerDb>
+  </layers>
+</template>
